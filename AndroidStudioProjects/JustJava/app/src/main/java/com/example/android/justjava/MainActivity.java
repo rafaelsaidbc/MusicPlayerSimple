@@ -54,16 +54,32 @@ public class MainActivity extends AppCompatActivity {
         boolean hasChocolate = chocolateCheckBox.isChecked();
 
 
-        int price = calculatePrice();
+        int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
     }
     /**
+     * @param addChocolate choose if user wants chocolate topping
+     *@param addWhippedCream choose if user wants whipped cream topping
      * Calculates the price of the order
      * @return total price
      */
-    private int calculatePrice() {
-        return quantity * 5;
+    private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
+        //price of 1 cup of coffee
+        int basePrice = 5;
+
+        //add $1 if the user wants whipped cream
+        if (addWhippedCream) {
+            basePrice = basePrice + 1;
+        }
+
+        //add $2 if the user wants chocolate
+        if (addChocolate) {
+            basePrice = basePrice + 2;
+        }
+
+        //calculate the total price multiplying by quantity
+        return quantity * basePrice;
         }
 
     private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
