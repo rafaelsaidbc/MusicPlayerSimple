@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * This app displays an order form to order coffee.
@@ -13,8 +14,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-/* colocar a variável no public class torna-a uma variável global.
-     */
+    /* colocar a variável no public class torna-a uma variável global.
+         */
     int quantity = 2;
 
     @Override
@@ -22,18 +23,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     /*This method is called when the + button is clicked.
      */
     public void increment(View view) {
+        if (quantity == 100) {
+            Toast.makeText(this, "Você não pode solicitar mais de 100 cafés", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity + 1;
         displayQuantity(quantity);
+
     }
 
     /*This method is called when the - button is clicked.
     */
     public void decrement(View view) {
+        if (quantity == 1) {
+            Toast.makeText(this, "Você não pode solicitar menos de 1 café", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity - 1;
         displayQuantity(quantity);
+
     }
 
     /**
@@ -58,10 +70,11 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
     }
+
     /**
-     * @param addChocolate choose if user wants chocolate topping
-     *@param addWhippedCream choose if user wants whipped cream topping
-     * Calculates the price of the order
+     * @param addChocolate    choose if user wants chocolate topping
+     * @param addWhippedCream choose if user wants whipped cream topping
+     *                        Calculates the price of the order
      * @return total price
      */
     private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
@@ -80,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
         //calculate the total price multiplying by quantity
         return quantity * basePrice;
-        }
+    }
 
     private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = "Name: " + name;
