@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Só Java</string>
+    <string name="chocolate" translatable="false">Chocolate</string>
+    <string name="initial_quantity_value" translatable="false">Quantidade</string>
+    <string name="name" translatable="false">Nome</string>
+    <string name="order" translatable="false">Pedido</string>
+    <string name="order_summary_chocolate" translatable="false">Cobertura de chocolate</string>
+    <string name="order_summary_email_subject" translatable="false">Enviar para</string>
+    <string name="order_summary_name" translatable="false">Nome</string>
+    <string name="order_summary_price" translatable="false">Preço</string>
+    <string name="order_summary_quantity" translatable="false">Quantidade</string>
+    <string name="order_summary_whipped_cream" translatable="false">Cobertura de chantily</string>
+    <string name="quantity" translatable="false">Quantidade</string>
+    <string name="thank_you" translatable="false">Obrigado!</string>
+    <string name="toppings" translatable="false">Ingredientes</string>
+    <string name="whipped_cream" translatable="false">Chantily</string>
+</resources>
