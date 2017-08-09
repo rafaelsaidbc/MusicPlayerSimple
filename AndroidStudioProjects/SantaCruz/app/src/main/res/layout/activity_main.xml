@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00C853"
+    android:orientation="vertical"
+    tools:context="com.example.android.santacruz.MainActivity">
+
+    <TextView
+        android:id="@+id/jogadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="#FFC107"
+        android:text="Jogadores"
+        android:textSize="26dp" />
+
+    <TextView
+        android:id="@+id/resultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="#FFC107"
+        android:text="Resultados"
+        android:textSize="26dp" />
+
+    <TextView
+        android:id="@+id/calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="#FFC107"
+        android:text="Calendário"
+        android:textSize="26dp" />
+
+    <TextView
+        android:id="@+id/fotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="#FFC107"
+        android:text="Fotos"
+        android:textSize="26dp" />
+
+</LinearLayout>
